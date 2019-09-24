@@ -18,6 +18,7 @@ namespace Words
         {
             var words = ReadDataFile(filepath);
 
+            InitWordsID(words);
             PrintWords(words);
         }
 
@@ -31,6 +32,21 @@ namespace Words
             using (var fileStream = new FileStream(filepath, FileMode.Open, FileAccess.Read))
             {
                 return Model.Words.Load(fileStream);
+            }
+        }
+
+        /// <summary>
+        /// 各単語にIDを割り振る
+        /// </summary>
+        /// <param name="words">単語リストのデータ</param>
+        private static void InitWordsID(Model.Words words)
+        {
+            int id = 1;
+
+            foreach (var word in words.WordList)
+            {
+                word.ID = id;
+                id++;
             }
         }
 
