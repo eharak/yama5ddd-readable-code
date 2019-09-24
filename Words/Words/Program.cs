@@ -5,6 +5,10 @@ namespace Words
 {
     class Program
     {
+        /// <summary>
+        /// アプリケーションエントリーポイント
+        /// </summary>
+        /// <param name="args">コマンドライン引数</param>
         static void Main(string[] args)
         {
             try
