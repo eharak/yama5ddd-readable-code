@@ -58,7 +58,7 @@ namespace Words
         {
             foreach (var word in words.WordList)
             {
-                Console.WriteLine(word.Caption);
+                Console.WriteLine(string.Format("{0}: {1}", word.ID, word.Caption));
             }
         }
     }
