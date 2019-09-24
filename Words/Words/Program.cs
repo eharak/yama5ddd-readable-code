@@ -37,7 +37,7 @@ namespace Words
         {
             var appFilePath = Process.GetCurrentProcess().MainModule.FileName;
             var appFileName = Path.GetFileName(appFilePath);
-            var errorMessage = string.Format("使い方 : {0} データファイル名のフルパス", appFileName);
+            var errorMessage = string.Format("使い方 : {0} データファイル名のフルパス [出力する単語ID (オプション)]", appFileName);
 
             Console.WriteLine(errorMessage);
         }
