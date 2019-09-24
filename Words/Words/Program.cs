@@ -53,6 +53,7 @@ namespace Words
         /// 単語をコンソールに出力する
         /// </summary>
         /// <param name="filepath">単語データのファイルパス</param>
+        /// <param name="targetID">出力する単語ID</param>
         static void PutWords(string filepath, int targetID)
         {
             var words = ReadDataFile(filepath);
@@ -93,6 +94,7 @@ namespace Words
         /// 単語データを画面出力する
         /// </summary>
         /// <param name="words">単語リストのデータ</param>
+        /// <param name="targetID">出力する単語ID</param>
         private static void PrintWords(Model.Words words, int targetID)
         {
             bool mustPrint = (targetID == Model.Word.INVALID_ID);
