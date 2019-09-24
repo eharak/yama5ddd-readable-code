@@ -18,9 +18,16 @@ namespace Words
                 return;
             }
 
+            int targetID = Model.Word.INVALID_ID;
+
+            if (args.Length >= 2)
+            {
+                int.TryParse(args[1], out targetID);
+            }
+
             try
             {
-                PutWords(args[0]);
+                PutWords(args[0], targetID);
             }
             catch (Exception ex)
             {
@@ -46,12 +53,12 @@ namespace Words
         /// 単語をコンソールに出力する
         /// </summary>
         /// <param name="filepath">単語データのファイルパス</param>
-        static void PutWords(string filepath)
+        static void PutWords(string filepath, int targetID)
         {
             var words = ReadDataFile(filepath);
 
             InitWordsID(words);
-            PrintWords(words);
+            PrintWords(words, targetID);
         }
 
         /// <summary>
@@ -86,11 +93,16 @@ namespace Words
         /// 単語データを画面出力する
         /// </summary>
         /// <param name="words">単語リストのデータ</param>
-        private static void PrintWords(Model.Words words)
+        private static void PrintWords(Model.Words words, int targetID)
         {
+            bool mustPrint = (targetID == Model.Word.INVALID_ID);
+
             foreach (var word in words.WordList)
             {
-                Console.WriteLine(string.Format("{0}: {1}", word.ID, word.Caption));
+                if (mustPrint || (word.ID == targetID))
+                {
+                    Console.WriteLine(string.Format("{0}: {1}", word.ID, word.Caption));
+                }
             }
         }
     }
