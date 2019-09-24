@@ -11,6 +11,11 @@ namespace Words.Model
     public class Word
     {
         /// <summary>
+        /// 無効な単語ID
+        /// </summary>
+        public const int INVALID_ID = 0;
+
+        /// <summary>
         /// 単語のID
         /// </summary>
         public int ID { get; set; }
