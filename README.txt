@@ -7,9 +7,9 @@
 # 実行方法
 
 - コマンドライオプションでデータファイルのパスを指定してWords.exeを実行する
-  例: Words.exe word.xml
+  例: Words.exe words.xml
 
 # 単語データファイルのフォーマット
 
 - xml形式となっている
-  - 詳細はWords\Model\Word.csを参照
+  - 詳細はWords\Model\Words.csを参照
