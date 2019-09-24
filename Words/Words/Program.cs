@@ -7,12 +7,16 @@ namespace Words
     {
         static void Main(string[] args)
         {
-            Model.Word word;
+            Model.Words words;
             using (var fileStream = new FileStream(args[0], FileMode.Open, FileAccess.Read))
             {
-                word = Model.Word.Load(fileStream);
+                words = Model.Words.Load(fileStream);
             }
-            Console.WriteLine(word.Caption);
+
+            foreach(var word in words.WordList)
+            {
+                Console.WriteLine(word.Caption);
+            }
         }
     }
 }
