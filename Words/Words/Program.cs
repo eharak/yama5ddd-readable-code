@@ -7,7 +7,14 @@ namespace Words
     {
         static void Main(string[] args)
         {
-            PutWords(args[0]);
+            try
+            {
+                PutWords(args[0]);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
 
         /// <summary>
