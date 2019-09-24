@@ -11,6 +11,11 @@ namespace Words.Model
     public class Word
     {
         /// <summary>
+        /// 単語のID
+        /// </summary>
+        public int ID { get; set; }
+
+        /// <summary>
         /// 単語の見出し
         /// </summary>
         public string Caption { get; set; }
