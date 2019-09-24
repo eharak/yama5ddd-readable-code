@@ -10,6 +10,7 @@ namespace Words
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("上手");
         }
     }
 }
