@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace Words
 {
@@ -10,7 +7,12 @@ namespace Words
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("上手");
+            Model.Word word;
+            using (var fileStream = new FileStream(args[0], FileMode.Open, FileAccess.Read))
+            {
+                word = Model.Word.Load(fileStream);
+            }
+            Console.WriteLine(word.Caption);
         }
     }
 }
