@@ -18,10 +18,7 @@ namespace Words
         {
             var words = ReadDataFile(filepath);
 
-            foreach (var word in words.WordList)
-            {
-                Console.WriteLine(word.Caption);
-            }
+            PrintWords(words);
         }
 
         /// <summary>
@@ -34,6 +31,18 @@ namespace Words
             using (var fileStream = new FileStream(filepath, FileMode.Open, FileAccess.Read))
             {
                 return Model.Words.Load(fileStream);
+            }
+        }
+
+        /// <summary>
+        /// 単語データを画面出力する
+        /// </summary>
+        /// <param name="words">単語リストのデータ</param>
+        private static void PrintWords(Model.Words words)
+        {
+            foreach (var word in words.WordList)
+            {
+                Console.WriteLine(word.Caption);
             }
         }
     }
